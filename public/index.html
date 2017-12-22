@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    li{
+      background-color: gray;
+      color: white;
+      padding: 10px;
+      border: solid 1px transparent;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      width:60%;
+      max-width: 300px;
+      margin: 10px;
+      word-break:break-all;
+    }
+  </style>
 </head>
+
+
 <body class="chat">
-  <div class="chat_sidebar">
+  <div class="chat__sidebar">
     <h3>Contacts</h3>
     <div id="users"></div>
   </div>
+
   <div class="chat__main">
     <ol id="messages" class="chat__messages"></ol>
-    <div>
-      
+
+    <div class="chat__footer">
+      <form id="message-form">
+        <input name="message" autocomplete="off" type="text" autofocus="off" placeholder="Message"/>
+        <button type="submit">Send</button>
+      </form>
+      <button id="send-location">Send Location</button>
     </div>
-    <form id="message-form">
-      <input name="message" type="text" placeholder="Message"/>
-      <input type="submit" value="send"/>
-    </form>
-    <button id="send-location">Send Location</button>
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
